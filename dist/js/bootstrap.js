@@ -523,11 +523,11 @@ if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery"
     this.transitioning = null
     this.collapseSizes = []
     
-    if (this.$element.hasClass('collapse'))    this.collapseSizes.push('collapse');
-    if (this.$element.hasClass('collapse-xs')) this.collapseSizes.push('collapse-xs');
-    if (this.$element.hasClass('collapse-sm')) this.collapseSizes.push('collapse-sm');
-    if (this.$element.hasClass('collapse-md')) this.collapseSizes.push('collapse-md');
-    if (this.$element.hasClass('collapse-lg')) this.collapseSizes.push('collapse-lg');
+    if (this.$element.hasClass('collapse-xs')) this.collapseSizes.push('collapse-xs')
+    if (this.$element.hasClass('collapse-sm')) this.collapseSizes.push('collapse-sm')
+    if (this.$element.hasClass('collapse-md')) this.collapseSizes.push('collapse-md')
+    if (this.$element.hasClass('collapse-lg')) this.collapseSizes.push('collapse-lg')
+    if (this.collapseSizes.length <= 0)        this.collapseSizes.push('collapse')
     
     if (this.options.parent) this.$parent = $(this.options.parent)
     if (this.options.toggle) this.toggle()
