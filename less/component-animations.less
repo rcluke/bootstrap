@@ -21,6 +21,92 @@
     display: block;
   }
 }
+
+.collapse-xs {
+  .responsive-visibility();
+  @media (max-width: @screen-xs-max) {
+    .responsive-invisibility();
+  }
+  &.collapse-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.collapse-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.collapse-lg {
+    @media (min-width: @screen-lg-min) {
+      .responsive-invisibility();
+    }
+  }
+}
+.collapse-sm {
+  .responsive-visibility();
+  &.collapse-xs {
+    @media (max-width: @screen-xs-max) {
+      .responsive-invisibility();
+    }
+  }
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .responsive-invisibility();
+  }
+  &.collapse-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.collapse-lg {
+    @media (min-width: @screen-lg-min) {
+      .responsive-invisibility();
+    }
+  }
+}
+.collapse-md {
+  .responsive-visibility();
+  &.collapse-xs {
+    @media (max-width: @screen-xs-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.collapse-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .responsive-invisibility();
+    }
+  }
+  @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .responsive-invisibility();
+  }
+  &.collapse-lg {
+    @media (min-width: @screen-lg-min) {
+      .responsive-invisibility();
+    }
+  }
+}
+.collapse-lg {
+  .responsive-visibility();
+  &.collapse-xs {
+    @media (max-width: @screen-xs-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.collapse-sm {
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      .responsive-invisibility();
+    }
+  }
+  &.collapse-md {
+    @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+      .responsive-invisibility();
+    }
+  }
+  @media (min-width: @screen-lg-min) {
+    .responsive-invisibility();
+  }
+}
+
 .collapsing {
   position: relative;
   height: 0;

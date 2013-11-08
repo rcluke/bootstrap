@@ -27,7 +27,14 @@
     this.$element      = $(element)
     this.options       = $.extend({}, Collapse.DEFAULTS, options)
     this.transitioning = null
-
+    this.collapseSizes = []
+    
+    if (this.$element.hasClass('collapse'))    this.collapseSizes.push('collapse');
+    if (this.$element.hasClass('collapse-xs')) this.collapseSizes.push('collapse-xs');
+    if (this.$element.hasClass('collapse-sm')) this.collapseSizes.push('collapse-sm');
+    if (this.$element.hasClass('collapse-md')) this.collapseSizes.push('collapse-md');
+    if (this.$element.hasClass('collapse-lg')) this.collapseSizes.push('collapse-lg');
+    
     if (this.options.parent) this.$parent = $(this.options.parent)
     if (this.options.toggle) this.toggle()
   }
@@ -61,6 +68,10 @@
 
     this.$element
       .removeClass('collapse')
+      .removeClass('collapse-xs')
+      .removeClass('collapse-sm')
+      .removeClass('collapse-md')
+      .removeClass('collapse-lg')
       .addClass('collapsing')
       [dimension](0)
 
@@ -101,6 +112,10 @@
     this.$element
       .addClass('collapsing')
       .removeClass('collapse')
+      .removeClass('collapse-xs')
+      .removeClass('collapse-sm')
+      .removeClass('collapse-md')
+      .removeClass('collapse-lg')
       .removeClass('in')
 
     this.transitioning = 1
@@ -110,7 +125,10 @@
       this.$element
         .trigger('hidden.bs.collapse')
         .removeClass('collapsing')
-        .addClass('collapse')
+
+      for (var i = 0; i < this.collapseSizes.length; i++) {
+        this.$element.addClass(this.collapseSizes[i])
+      }
     }
 
     if (!$.support.transition) return complete.call(this)
