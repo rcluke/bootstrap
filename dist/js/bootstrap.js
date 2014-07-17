@@ -258,15 +258,6 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
   }
 
 
-  // FOCUS SHIM (FOR BUTTON GROUPS)
-  // ==============================
-
-  function getBtnTarget(target) {
-    var $target = $(target)
-    return $target.hasClass('btn') ? $target : $target.parent('.btn')
-  }
-
-
   // BUTTON DATA-API
   // ===============
 
@@ -277,11 +268,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       Plugin.call($btn, 'toggle')
       e.preventDefault()
     })
-    .on('focus.bs.button.data-api', '[data-toggle^="button"]', function (e) {
-      getBtnTarget(e.target).addClass('focus')
-    })
-    .on('blur.bs.button.data-api', '[data-toggle^="button"]', function (e) {
-      getBtnTarget(e.target).removeClass('focus')
+    .on('focus.bs.button.data-api blur.bs.button.data-api', '[data-toggle^="button"]', function (e) {
+      $(e.target).closest('.btn').toggleClass('focus', e.type == 'focus')
     })
 
 }(jQuery);
@@ -530,13 +518,13 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     this.options       = $.extend({}, Collapse.DEFAULTS, options)
     this.transitioning = null
     this.collapseSizes = []
-    
+
     if (this.$element.hasClass('collapse-xs')) this.collapseSizes.push('collapse-xs')
     if (this.$element.hasClass('collapse-sm')) this.collapseSizes.push('collapse-sm')
     if (this.$element.hasClass('collapse-md')) this.collapseSizes.push('collapse-md')
     if (this.$element.hasClass('collapse-lg')) this.collapseSizes.push('collapse-lg')
     if (this.collapseSizes.length <= 0)        this.collapseSizes.push('collapse')
-    
+
     if (this.options.parent) this.$parent = $(this.options.parent)
     if (this.options.toggle) this.toggle()
   }
@@ -572,16 +560,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
     this.$element
       .removeClass('collapse')
-<<<<<<< HEAD
       .removeClass('collapse-xs')
       .removeClass('collapse-sm')
       .removeClass('collapse-md')
       .removeClass('collapse-lg')
-      .addClass('collapsing')
-      [dimension](0)
-=======
       .addClass('collapsing')[dimension](0)
->>>>>>> master
 
     this.transitioning = 1
 
@@ -616,16 +599,11 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
 
     this.$element
       .addClass('collapsing')
-<<<<<<< HEAD
-      .removeClass('collapse')
-      .removeClass('collapse-xs')
-      .removeClass('collapse-sm')
-      .removeClass('collapse-md')
-      .removeClass('collapse-lg')
-      .removeClass('in')
-=======
       .removeClass('collapse in')
->>>>>>> master
+      .removeClass('collapse-xs in')
+      .removeClass('collapse-sm in')
+      .removeClass('collapse-md in')
+      .removeClass('collapse-lg in')
 
     this.transitioning = 1
 

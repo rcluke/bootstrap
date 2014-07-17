@@ -3150,6 +3150,138 @@ tr.collapse.in {
 tbody.collapse.in {
   display: table-row-group;
 }
+.collapse-xs {
+  display: block !important;
+}
+table.collapse-xs {
+  display: table;
+}
+tr.collapse-xs {
+  display: table-row !important;
+}
+th.collapse-xs,
+td.collapse-xs {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  .collapse-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .collapse-xs.collapse-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .collapse-xs.collapse-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .collapse-xs.collapse-lg {
+    display: none !important;
+  }
+}
+.collapse-sm {
+  display: block !important;
+}
+table.collapse-sm {
+  display: table;
+}
+tr.collapse-sm {
+  display: table-row !important;
+}
+th.collapse-sm,
+td.collapse-sm {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  .collapse-sm.collapse-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .collapse-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .collapse-sm.collapse-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .collapse-sm.collapse-lg {
+    display: none !important;
+  }
+}
+.collapse-md {
+  display: block !important;
+}
+table.collapse-md {
+  display: table;
+}
+tr.collapse-md {
+  display: table-row !important;
+}
+th.collapse-md,
+td.collapse-md {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  .collapse-md.collapse-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .collapse-md.collapse-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .collapse-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .collapse-md.collapse-lg {
+    display: none !important;
+  }
+}
+.collapse-lg {
+  display: block !important;
+}
+table.collapse-lg {
+  display: table;
+}
+tr.collapse-lg {
+  display: table-row !important;
+}
+th.collapse-lg,
+td.collapse-lg {
+  display: table-cell !important;
+}
+@media (max-width: 767px) {
+  .collapse-lg.collapse-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .collapse-lg.collapse-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .collapse-lg.collapse-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .collapse-lg {
+    display: none !important;
+  }
+}
 .collapsing {
   position: relative;
   height: 0;

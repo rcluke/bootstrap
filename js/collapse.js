@@ -71,11 +71,7 @@
     var complete = function () {
       this.$element
         .removeClass('collapsing')
-
-      for (var i = 0; i < this.collapseSizes.length; i++) {
-        this.$element.addClass(this.collapseSizes[i] + ' in')[dimension]('')
-      }
-
+        .addClass('collapse in')[dimension]('')
       this.transitioning = 0
       this.$element
         .trigger('shown.bs.collapse')

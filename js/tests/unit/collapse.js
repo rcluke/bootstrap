@@ -168,11 +168,4 @@ $(function () {
     $target3.click()
   })
 
-  test('should reset to responsive collapse classes after finishing collapses', function () {
-    var el = $('<div class="collapse-xs collapse-sm"></div>')
-      .collapse('show')
-      .collapse('hide')
-    ok(el.hasClass('collapse-xs') && el.hasClass('collapse-sm'), 'has original responsive collapse classes')
-  })
-
 })
